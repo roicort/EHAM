@@ -53,7 +53,7 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 import seaborn
 import tensorflow as tf
-import png
+#import png
 from docopt import docopt
 import commons
 import qudeq

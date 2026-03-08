@@ -29,7 +29,12 @@ from tensorflow.keras.layers import (
     SpatialDropout2D,
     UpSampling2D,
 )
-from tensorflow.keras.layers.experimental.preprocessing import Rescaling
+try:
+    # TF >= 2.6 exposes preprocessing layers directly under keras.layers.
+    from tensorflow.keras.layers import Rescaling
+except ImportError:
+    # Backward compatibility for older TF releases.
+    from tensorflow.keras.layers.experimental.preprocessing import Rescaling
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.callbacks import Callback
 import commons
